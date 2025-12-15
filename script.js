@@ -8,7 +8,6 @@ function loadTasks() {
   const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   tasks.forEach(task => createTask(task));
 }
-
 function addTask() {
   if (taskInput.value === "") return;
 

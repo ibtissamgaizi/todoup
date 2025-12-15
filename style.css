@@ -1,58 +1,132 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
+  font-family: "Inter", Arial, sans-serif;
+  background: linear-gradient(135deg, #0077ff, #00c6ff);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 20px;
 }
 
 .app {
-  background: white;
-  padding: 20px;
-  width: 320px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 16px;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+/* Input + button layout */
+.input-group {
+  display: flex;
+  gap: 10px;
 }
 
 input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0077ff;
+  box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.15);
 }
 
 button {
-  width: 100%;
-  padding: 10px;
+  padding: 12px 16px;
   background: #0077ff;
-  color: white;
+  color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s, transform 0.2s;
 }
 
+button:hover {
+  background: #005fd1;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Task list */
 ul {
   list-style: none;
-  padding: 0;
-  margin-top: 15px;
+  margin-top: 18px;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
+/* Task item */
 li {
-  background: #f1f1f1;
-  padding: 8px;
-  border-radius: 6px;
+  background: #f7f8fa;
+  padding: 10px 12px;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  transition: background 0.3s;
 }
 
+li:hover {
+  background: #eef2f7;
+}
+
+/* Delete button */
 li span {
   cursor: pointer;
-  color: red;
+  color: #ff4d4d;
+  font-size: 1.1rem;
+  padding: 4px;
+  transition: transform 0.2s, color 0.2s;
+}
+
+li span:hover {
+  color: #d60000;
+  transform: scale(1.2);
+}
+
+/* Scrollbar (optional but nice) */
+ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 6px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  button {
+    padding: 12px;
+  }
 }
